@@ -7,7 +7,7 @@ class Network{
   final String url;
 
   Future getData() async{
-    http.Response response = await http.get(url);
+    http.Response response = await http.get(url as Uri);
     if(response.statusCode == 200){
       String data = response.body;
       return jsonDecode(data);
